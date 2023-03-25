@@ -10,7 +10,13 @@ namespace Laboratorio04
     {
         public int[] CalcularBilletes(int cantidad, int[] billetes)
         {
-            return new int[] {};
+            int[] resultado = new int[billetes.Length];
+            for(int i = 0; i< billetes.Length; i++)
+            {
+                resultado[i] = cantidad / billetes[i];
+                cantidad = cantidad - (resultado[i] * billetes[i]);
+            }
+            return resultado;
         }
     }
 }
